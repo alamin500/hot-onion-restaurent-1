@@ -1,0 +1,13 @@
+.breakfast-img {
+  height: 250px;
+  width: 250px;
+}
+.doctor-img {
+  width: 230px;
+  height: 280px;
+}
+.doctor {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}

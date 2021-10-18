@@ -1,17 +1,19 @@
 import React from "react";
+import AboutUs from "../About us/AboutUs";
 
-import Breakfasts from "../Breakfasts/Breakfasts";
-import Dinners from "../Dinners/Dinners";
+import Doctors from "../Doctors/Doctors";
+
 import Lunchs from "../Lunchs/Lunchs";
+import Services from "../Services/Services";
 
 const Home = () => {
   return (
     <div>
       <h1>jfdsf</h1>
-
-      <Breakfasts></Breakfasts>
-      <Dinners></Dinners>
+      <Services></Services>
+      <Doctors></Doctors>
       <Lunchs></Lunchs>
+      <AboutUs></AboutUs>
     </div>
   );
 };

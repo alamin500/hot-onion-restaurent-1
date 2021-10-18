@@ -6,6 +6,8 @@ import Header from "./Component/Header/Header";
 import Home from "./Component/Home/Home/Home";
 import Login from "./Component/Login/Login/Login";
 import Delivery from "./Component/Delivery/Delivery";
+import Services from "./Component/Home/Services/Services";
+import Doctors from "./Component/Home/Doctors/Doctors";
 
 function App() {
   return (
@@ -15,6 +17,15 @@ function App() {
         <Switch>
           <Route path="/home">
             <Home></Home>
+          </Route>
+          <Route path="/service">
+            <Services></Services>
+          </Route>
+          <Route path="/doctor">
+            <Doctors></Doctors>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
           </Route>
           <Route path="/Login">
             <Login></Login>
