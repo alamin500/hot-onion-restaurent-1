@@ -1,4 +1,5 @@
 import React from "react";
+import Login from "../../Login/Login/Login";
 import AboutUs from "../About us/AboutUs";
 
 import Doctors from "../Doctors/Doctors";
@@ -14,6 +15,7 @@ const Home = () => {
       <Doctors></Doctors>
       <Lunchs></Lunchs>
       <AboutUs></AboutUs>
+      <Login></Login>
     </div>
   );
 };

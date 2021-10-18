@@ -3,7 +3,10 @@ import { Button, FormControl, InputGroup } from "react-bootstrap";
 import "./Login.css";
 import img from "../../../images/logo2.png";
 
+import useFirebase from "../../../hooks/useFirebase";
+
 const Login = () => {
+  const { googleSignIn } = useFirebase();
   return (
     <div className="container">
       <div>
@@ -42,8 +45,12 @@ const Login = () => {
             aria-describedby="inputGroup-sizing-default"
           />
         </InputGroup>
-        <Button variant="danger" className="login-btn mb-3 w-50">
-          Sign In
+        <Button
+          onClick={googleSignIn}
+          variant="danger"
+          className="login-btn mb-3 w-50"
+        >
+          Google Sign In
         </Button>
       </div>
     </div>
