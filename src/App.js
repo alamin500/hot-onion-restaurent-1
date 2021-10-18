@@ -2,7 +2,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Redirect } from "react-router";
+
 import Header from "./Component/Header/Header";
 import Home from "./Component/Home/Home/Home";
 import Login from "./Component/Login/Login/Login";
@@ -10,9 +10,13 @@ import Delivery from "./Component/Delivery/Delivery";
 import Services from "./Component/Home/Services/Services";
 import Doctors from "./Component/Home/Doctors/Doctors";
 import Register from "./Component/Home/Register/Register";
-import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
+
 import AuthProvider from "./Context/AuthProvider";
 import useAuth from "../src/hooks/useAuth";
+import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
+import BuyNow from "./Component/Home/BuyNow/BuyNow";
+import Meet from "./Component/Home/Meet/Meet";
+import Error from "./Component/Home/Error/Error";
 function App() {
   const user = useAuth();
   console.log(user);
@@ -22,14 +26,9 @@ function App() {
         <Router>
           <Header></Header>
           <Switch>
-            {/* {user.email ? (
-              <Route path="/home">
-                <Home></Home>
-              </Route>
-            ) : (
-              <Redirect to="/login" />
-            )} */}
-
+            {/* <Route exact path="/">
+              <Home></Home>
+            </Route> */}
             <Route path="/service">
               <Services></Services>
             </Route>
@@ -42,11 +41,20 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
-            {/* <PrivateRoute path="/home">
-              <Home></Home>
-            </PrivateRoute> */}
+            <PrivateRoute path="/meet">
+              <Meet></Meet>
+            </PrivateRoute>
+            <PrivateRoute path="/buy">
+              <BuyNow></BuyNow>
+            </PrivateRoute>
             <Route path="/delivery">
               <Delivery></Delivery>
+            </Route>
+            <Route to="/home">
+              <Home></Home>
+            </Route>
+            <Route path="*">
+              <Error></Error>
             </Route>
           </Switch>
         </Router>

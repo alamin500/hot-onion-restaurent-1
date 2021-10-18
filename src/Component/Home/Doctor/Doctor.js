@@ -1,6 +1,7 @@
 import React from "react";
 import "./Doctor.css";
 import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Doctor = ({ doctor }) => {
   const { name, img, describe } = doctor;
@@ -18,8 +19,9 @@ const Doctor = ({ doctor }) => {
           <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
         </ListGroup>
         <Card.Body>
-          <Card.Link href="#">Card Link</Card.Link>
-          <Card.Link href="#">Another Link</Card.Link>
+          <Link className="meet-link" to="/meet">
+            Meet Now
+          </Link>
         </Card.Body>
       </Card>
     </div>

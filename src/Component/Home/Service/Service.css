@@ -1,4 +1,8 @@
 .service-card img {
-  height: 180px;
+  height: 150px;
   width: 230px;
+  margin: 10px;
+}
+.service-card a {
+  text-decoration: none;
 }

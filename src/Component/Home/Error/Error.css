@@ -1,0 +1,9 @@
+.error-bg {
+  height: 100vh;
+  background-color: rgb(80, 39, 39);
+  margin: 0 2px 0 2px;
+}
+.error-bg h1 {
+  font-size: 100px;
+  font-weight: 1000;
+}
