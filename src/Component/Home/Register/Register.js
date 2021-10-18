@@ -1,9 +1,3 @@
-import React, { useState } from "react";
-
-import "./Login.css";
-
-import useFirebase from "../../../hooks/useFirebase";
-import { Link } from "react-router-dom";
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -11,20 +5,27 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "@firebase/auth";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-const Login = () => {
+const Register = () => {
   const auth = getAuth();
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
+  const handleNameChange = (e) => {
+    setName(e.target.value);
+  };
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-
+  const setUserName = () => {
+    updateProfile(auth.currentUser, { displayName: name }).then((result) => {});
+  };
   const verifyEmail = () => {
     sendEmailVerification(auth.currentUser).then((result) => {
       console.log(result);
@@ -37,8 +38,22 @@ const Login = () => {
       setError("password 6 ta hote hobe");
       return;
     } else {
-      processLogin(email, password);
+      createNewUser(email, password);
     }
+  };
+
+  const createNewUser = (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        setError("");
+        verifyEmail();
+        setUserName();
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   const processLogin = (email, password) => {
@@ -52,34 +67,42 @@ const Login = () => {
         setError(error.message);
       });
   };
-  const { googleSignIn } = useFirebase();
   return (
-    <div className="login-form">
+    <div className="register-form">
       <div>
-        <h2>Login</h2>
+        <h2>Register: Create Accout</h2>
         <form onSubmit={handleRegistration}>
+          <input
+            type="text"
+            onBlur={handleNameChange}
+            placeholder="Your Name"
+          />
           <input
             type="email"
             onBlur={handleEmailChange}
             name=""
-            id=""
             placeholder="Your Email"
+            required
           />
           <br />
-          <input type="password" onBlur={handlePasswordChange} name="" />
+          <input
+            type="password"
+            onBlur={handlePasswordChange}
+            placeholder="Re-enter Password"
+            required
+          />
           <br />
           <input type="submit" value="Submit" />
-          <p>
-            New here? <Link to="/register">Create Accout</Link>
-          </p>
-          <div>-------------or-----------</div>
-          <button className="btn-regular" onClick={googleSignIn}>
-            Google Sign In
-          </button>
         </form>
+        <p>
+          Already have an Accout?{" "}
+          <Link to="/Login">
+            <div className="btn-regular">Google Sign In</div>
+          </Link>
+        </p>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Register;
