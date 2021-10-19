@@ -6,3 +6,6 @@
 .service-card a {
   text-decoration: none;
 }
+.service-card {
+  margin: 0;
+}

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Service from "../Service/Service";
+import "./Services.css";
 
-const Services = () => {
+const Services = (props) => {
+  const { home = false } = props;
   const [services, setServices] = useState([]);
   useEffect(() => {
     fetch("services.json")
@@ -10,11 +12,15 @@ const Services = () => {
   });
   return (
     <div className="container">
-      <h1>Our Services</h1>
       <div className="row g-5 p-5">
-        {services.map((service) => (
-          <Service key={service.id} services={service}></Service>
-        ))}
+        <h1 className="service-h1">Our Services</h1>
+        {services.map((service, i) =>
+          home ? (
+            i < 4 && <Service key={service.id} services={service}></Service>
+          ) : (
+            <Service key={service.id} services={service}></Service>
+          )
+        )}
       </div>
     </div>
   );

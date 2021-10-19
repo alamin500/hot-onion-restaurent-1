@@ -5,8 +5,10 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "@firebase/auth";
+import Button from "@restart/ui/esm/Button";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Register.css";
 
 const Register = () => {
   const auth = getAuth();
@@ -35,7 +37,7 @@ const Register = () => {
     e.preventDefault();
     console.log(email, password);
     if (password.length < 6) {
-      setError("password 6 ta hote hobe");
+      setError("Please enter 6 password.");
       return;
     } else {
       createNewUser(email, password);
@@ -75,28 +77,44 @@ const Register = () => {
           <input
             type="text"
             onBlur={handleNameChange}
+            className="p-2 form-control w-25"
             placeholder="Your Name"
+            aria-label="text"
+            aria-describedby="basic-addon1"
+            required
           />
+          <br />
+
           <input
             type="email"
             onBlur={handleEmailChange}
-            name=""
+            className="p-2 form-control w-25"
             placeholder="Your Email"
+            aria-label="text"
+            aria-describedby="basic-addon1"
             required
           />
+
           <br />
           <input
             type="password"
             onBlur={handlePasswordChange}
-            placeholder="Re-enter Password"
+            className="p-2 form-control w-25"
+            placeholder="Your Email"
+            aria-label="text"
+            aria-describedby="basic-addon1"
             required
           />
+
           <br />
-          <input type="submit" value="Submit" />
+          <p>{error}</p>
+          <Button type="submit" value="Submit" className="btn w-25 btn-primary">
+            Submit
+          </Button>
         </form>
         <p>
           Already have an Accout?{" "}
-          <Link to="/Login">
+          <Link className="google-btn" to="/Login">
             <div className="btn-regular">Google Sign In</div>
           </Link>
         </p>

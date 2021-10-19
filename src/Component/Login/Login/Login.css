@@ -8,3 +8,7 @@
   align-items: flex-start;
   padding: 40px;
 }
+.login-form {
+  align-items: center;
+  justify-content: center;
+}

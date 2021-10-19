@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import useFirebase from "../../hooks/useFirebase";
@@ -8,11 +8,16 @@ const Header = () => {
   const { user, logOut } = useFirebase();
   const allContext = useFirebase();
   console.log(allContext);
+  const [show, setShow] = useState();
+
+  const handleShow = () => setShow();
   return (
     <div>
       <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Food</Navbar.Brand>
+        <Container className="nav-text">
+          <Link to="/home">
+            <h3>Matlab Hospital</h3>
+          </Link>
           <Nav className="me-auto nav-text">
             <Link to="/home">Home</Link>
             <Link to="/service">Service</Link>

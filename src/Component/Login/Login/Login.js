@@ -11,12 +11,19 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "@firebase/auth";
+import Button from "@restart/ui/esm/Button";
+import { Modal } from "react-bootstrap";
 
 const Login = () => {
   const auth = getAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -55,16 +62,28 @@ const Login = () => {
   const { googleSignIn } = useFirebase();
   return (
     <div className="login-form">
+      <Button variant="primary" onClick={handleShow}>
+        Launch demo modal
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      {/* --------------------- */}
       <div>
         <h2>Login</h2>
         <form onSubmit={handleRegistration}>
-          <input
-            type="email"
-            onBlur={handleEmailChange}
-            name=""
-            id=""
-            placeholder="Your Email"
-          />
           <br />
           <input
             type="email"
@@ -74,14 +93,30 @@ const Login = () => {
             aria-label="Username"
             aria-describedby="basic-addon1"
           />
-          <input type="password" onBlur={handlePasswordChange} name="" />
           <br />
-          <input type="submit" value="Submit" />
+          <input
+            type="Password"
+            onBlur={handlePasswordChange}
+            className="p-2 form-control w-25"
+            placeholder="Password"
+            aria-label="Password"
+            aria-describedby="basic-addon1"
+          />
+
+          <br />
+          <Button type="submit" value="Submit" className="btn w-25 btn-primary">
+            Log In
+          </Button>
+          <br />
+          <br />
           <p>
-            New here? <Link to="/register">Create Accout</Link>
+            Don’t have an account?{" "}
+            <Link className="google-btn" to="/register">
+              Create Accout
+            </Link>
           </p>
-          <div>-------------or-----------</div>
-          <button className="btn-regular" onClick={googleSignIn}>
+          <br />
+          <button className="btn w-25 btn-danger" onClick={googleSignIn}>
             Google Sign In
           </button>
         </form>
