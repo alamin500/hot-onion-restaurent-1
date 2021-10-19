@@ -12,58 +12,58 @@ import Doctor from "../Doctor/Doctor";
 const doctors = [
   {
     img: doctor1,
-    name: "Healthy Meal Plan",
-    describe: "How to make delicious food at home.",
-    price: "$33",
+    name: "Dr. Michael Linden",
+    describe: "Throat Specialist",
+    phone: "018878789798",
   },
   {
     img: doctor2,
-    name: "Healthy Meal Plan",
-    describe: "How to make delicious food at home.",
-    price: "$33",
+    name: "HDr. Max Turner",
+    describe: "Cardiologist",
+    phone: "019888787878",
   },
   {
     img: doctor3,
-    name: "Healthy Meal Plan",
-    describe: "How to make delicious food at home.",
-    price: "$33",
+    name: "Dr. Amy Adams",
+    describe: "Rehabilitation Therapy",
+    phone: "01739898893",
   },
   {
     img: doctor4,
-    name: "Healthy Meal Plan",
-    describe: "How to make delicious food at home.",
-    price: "$33",
+    name: "Dr. Nick Sims",
+    describe: "Outpatient Surgery",
+    phone: "018938398498",
   },
   {
     img: doctor5,
-    name: "Healthy Meal Plan",
-    describe: "How to make delicious food at home.",
-    price: "$33",
+    name: "Dr. Michael Linden",
+    describe: "Cardiac Clinic",
+    phone: "0168973778",
   },
   {
     img: doctor6,
-    name: "Healthy Meal Plan",
-    describe: "How to make delicious food at home.",
-    price: "$33",
+    name: "Dr. Max Turner",
+    describe: "Ophthalmology Clinic",
+    phone: "01387877894",
   },
   {
     img: doctor7,
-    name: "Healthy Meal Plan",
-    describe: "How to make delicious food at home.",
-    price: "$33",
+    name: "Dr. Amy Adams",
+    describe: "Gynaecological Clinic",
+    phone: "01687798980",
   },
   {
     img: doctor8,
-    name: "Healthy Meal Plan",
-    describe: "How to make delicious food at home.",
-    price: "$33",
+    name: "Dr. Julia Jameson",
+    describe: "Outpatient Rehabilitation",
+    phone: "01776768978",
   },
 ];
 const Doctors = () => {
   return (
     <div className="container">
-      <h1>Doctors</h1>
-      <div className="row g-5">
+      <div className="row g-2">
+        <h1 style={{ textAlign: "left" }}>Doctors</h1>
         {doctors.map((doctor) => (
           <Doctor key={doctor.name} doctor={doctor}></Doctor>
         ))}

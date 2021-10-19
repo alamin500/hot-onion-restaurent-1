@@ -4,25 +4,22 @@ import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Doctor = ({ doctor }) => {
-  const { name, img, describe } = doctor;
+  const { name, img, describe, phone } = doctor;
   console.log(doctor);
   return (
     <div className="col-12 col-sm-6 col-lg-3">
-      <Card style={{ width: "18rem" }} className="doctor">
+      <Card className="doctor">
         <Card.Img variant="top" src={img} className="doctor-img" />
-        <Card.Body>
+        <Card.Body className="p-2">
           <Card.Title>{name}</Card.Title>
           <Card.Text>{describe}</Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
-          <ListGroupItem>{describe}</ListGroupItem>
-          <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+          <ListGroupItem>{phone}</ListGroupItem>
         </ListGroup>
-        <Card.Body>
-          <Link className="meet-link" to="/meet">
-            Meet Now
-          </Link>
-        </Card.Body>
+        <Link className="meet-link" to="/meet">
+          <Card.Body className="p-2 card-meet">Meet Now</Card.Body>
+        </Link>
       </Card>
     </div>
   );

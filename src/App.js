@@ -29,12 +29,13 @@ function App() {
             {/* <Route exact path="/">
               
             </Route> */}
-            <Route path="/service">
-              <Services></Services>
-            </Route>
             <Route path="/doctor">
               <Doctors></Doctors>
             </Route>
+            <Route path="/service">
+              <Services></Services>
+            </Route>
+
             <Route path="/login">
               <Login></Login>
             </Route>

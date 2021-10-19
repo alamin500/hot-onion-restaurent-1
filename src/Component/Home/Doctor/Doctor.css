@@ -1,16 +1,19 @@
-.breakfast-img {
-  height: 250px;
-  width: 250px;
-}
 .doctor-img {
   width: 230px;
   height: 280px;
+  margin: 0 20px;
 }
 .doctor {
   display: flex;
   justify-content: center;
-  margin: 40px;
 }
 .meet-link {
   text-decoration: none;
+  color: aliceblue;
+}
+.card-meet {
+  background-color: #4485ee;
+}
+.card-meet a {
+  color: white;
 }

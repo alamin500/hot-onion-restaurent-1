@@ -20,8 +20,9 @@ const Header = () => {
           </Link>
           <Nav className="me-auto nav-text">
             <Link to="/home">Home</Link>
-            <Link to="/service">Service</Link>
             <Link to="/doctor">Doctor</Link>
+            <Link to="/service">Service</Link>
+
             <Link to="/login">Login</Link>
             <span>{user.displayName}</span>
             {user?.email && <button onClick={logOut}> Log Out</button>}
