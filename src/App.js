@@ -17,6 +17,7 @@ import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
 import BuyNow from "./Component/Home/BuyNow/BuyNow";
 import Meet from "./Component/Home/Meet/Meet";
 import Error from "./Component/Home/Error/Error";
+import AboutUs from "./Component/Home/About us/AboutUs";
 function App() {
   const user = useAuth();
   console.log(user);
@@ -48,6 +49,9 @@ function App() {
             <PrivateRoute path="/buy">
               <BuyNow></BuyNow>
             </PrivateRoute>
+            <Route path="/about">
+              <AboutUs></AboutUs>
+            </Route>
             <Route path="/delivery">
               <Delivery></Delivery>
             </Route>

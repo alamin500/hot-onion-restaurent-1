@@ -1,10 +1,16 @@
+import { Button } from "react-bootstrap";
 import React from "react";
+
+import "./Banner.css";
 
 const Banner = () => {
   return (
-    <div>
+    <div className="about-image">
       <img src="" alt="" />
-      <h1>Banner</h1>
+      <p>Entrust your health our doctors</p>
+      <h3>The Hospital of the Future, Today</h3>
+      <Button variant="outline-light">Appoinment</Button>{" "}
+      <Button variant="outline-light">Meet Doctor</Button>{" "}
     </div>
   );
 };

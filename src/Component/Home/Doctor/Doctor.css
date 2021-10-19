@@ -1,7 +1,7 @@
 .doctor-img {
-  width: 230px;
-  height: 280px;
-  margin: 0 20px;
+  width: 250px;
+  height: 250px;
+  margin: 5px;
 }
 .doctor {
   display: flex;

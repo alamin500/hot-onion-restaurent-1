@@ -9,7 +9,7 @@ const Doctor = ({ doctor }) => {
   return (
     <div className="col-12 col-sm-6 col-lg-3">
       <Card className="doctor">
-        <Card.Img variant="top" src={img} className="doctor-img" />
+        <Card.Img variant="top" src={img} className=" doctor-img" />
         <Card.Body className="p-2">
           <Card.Title>{name}</Card.Title>
           <Card.Text>{describe}</Card.Text>

@@ -10,7 +10,7 @@ const AboutUs = () => {
   const rollFour = useSpring({ number: 48, from: { number: 0 } });
   const rollFive = useSpring({ number: 7856, from: { number: 0 } });
   return (
-    <section className="container">
+    <section>
       <div className="about-image">
         <p>About us</p>
         <h5>Chief Doctor Says</h5>

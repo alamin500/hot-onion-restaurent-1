@@ -12,7 +12,7 @@ const Services = (props) => {
   });
   return (
     <div className="container">
-      <div className="row g-5 p-5">
+      <div className="row g-5">
         <h1 className="service-h1">Our Services</h1>
         {services.map((service, i) =>
           home ? (

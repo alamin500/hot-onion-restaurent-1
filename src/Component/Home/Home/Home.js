@@ -1,6 +1,7 @@
 import React from "react";
 
 import AboutUs from "../About us/AboutUs";
+import Banner from "../Banner/Banner";
 
 import Doctors from "../Doctors/Doctors";
 import Footer from "../Footer/Footer";
@@ -10,8 +11,8 @@ import Services from "../Services/Services";
 const Home = () => {
   return (
     <div>
-      <h1>jfdsf</h1>
-      <Doctors></Doctors>
+      <Banner></Banner>
+      <Doctors home={true}></Doctors>
       <Services home={true}></Services>
 
       <AboutUs></AboutUs>
