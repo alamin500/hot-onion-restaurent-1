@@ -14,3 +14,6 @@
 .navbar-dark {
   padding: 0;
 }
+.nav-text {
+  margin-right: none !important;
+}

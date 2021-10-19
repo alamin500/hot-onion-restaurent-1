@@ -8,9 +8,7 @@ const Header = () => {
   const { user, logOut } = useFirebase();
   const allContext = useFirebase();
   console.log(allContext);
-  const [show, setShow] = useState();
 
-  const handleShow = () => setShow();
   return (
     <div>
       <Navbar bg="dark" variant="dark">

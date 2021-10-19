@@ -72,12 +72,12 @@ const Register = () => {
   return (
     <div className="register-form">
       <div>
-        <h2>Register: Create Accout</h2>
+        <h4 className="log-h4">Create an account</h4>
         <form onSubmit={handleRegistration}>
           <input
             type="text"
             onBlur={handleNameChange}
-            className="p-2 form-control w-25"
+            className="p-2 form-control"
             placeholder="Your Name"
             aria-label="text"
             aria-describedby="basic-addon1"
@@ -88,7 +88,7 @@ const Register = () => {
           <input
             type="email"
             onBlur={handleEmailChange}
-            className="p-2 form-control w-25"
+            className="p-2 form-control"
             placeholder="Your Email"
             aria-label="text"
             aria-describedby="basic-addon1"
@@ -99,23 +99,34 @@ const Register = () => {
           <input
             type="password"
             onBlur={handlePasswordChange}
-            className="p-2 form-control w-25"
-            placeholder="Your Email"
+            className="p-2 form-control "
+            placeholder="Password"
             aria-label="text"
             aria-describedby="basic-addon1"
             required
           />
 
-          <br />
           <p>{error}</p>
-          <Button type="submit" value="Submit" className="btn w-25 btn-primary">
-            Submit
+          <Button
+            type="submit"
+            value="Submit"
+            className="btn w-100 mt-1 btn-primary"
+          >
+            Register
           </Button>
         </form>
+        <br />
+        <br />
         <p>
           Already have an Accout?{" "}
           <Link className="google-btn" to="/Login">
-            <div className="btn-regular">Google Sign In</div>
+            <Button
+              type="submit"
+              value="Submit"
+              className="btn w-100 btn-danger"
+            >
+              Log In
+            </Button>
           </Link>
         </p>
       </div>

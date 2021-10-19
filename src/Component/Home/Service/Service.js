@@ -7,8 +7,8 @@ const Service = ({ services }) => {
   return (
     <div className="col-12 col-sm-6 col-lg-3 service-card">
       <Link to="/login">
-        <img src={img} alt="" />
-        <h5>{service}</h5>
+        <img className="card-img" src={img} alt="" />
+        <h5 className="service-h5">{service}</h5>
       </Link>
       <p>
         <small>In {catagory}</small>

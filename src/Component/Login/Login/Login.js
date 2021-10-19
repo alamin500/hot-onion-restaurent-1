@@ -14,16 +14,16 @@ import {
 import Button from "@restart/ui/esm/Button";
 import { Modal } from "react-bootstrap";
 
-const Login = () => {
+const Login = ({ show, setShow }) => {
   const auth = getAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(!show);
+  // const handleShow = () => setShow(true);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -62,33 +62,13 @@ const Login = () => {
   const { googleSignIn } = useFirebase();
   return (
     <div className="login-form">
-      <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button>
-
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
-      {/* --------------------- */}
       <div>
-        <h2>Login</h2>
+        <h4 className="log-h4">Login</h4>
         <form onSubmit={handleRegistration}>
-          <br />
           <input
             type="email"
             onBlur={handleEmailChange}
-            className="p-2 form-control w-25"
+            className="p-2 form-control w-100"
             placeholder="Email"
             aria-label="Username"
             aria-describedby="basic-addon1"
@@ -97,28 +77,34 @@ const Login = () => {
           <input
             type="Password"
             onBlur={handlePasswordChange}
-            className="p-2 form-control w-25"
+            className="p-2 form-control w-100"
             placeholder="Password"
             aria-label="Password"
             aria-describedby="basic-addon1"
           />
 
           <br />
-          <Button type="submit" value="Submit" className="btn w-25 btn-primary">
+          <Button
+            type="submit"
+            value="Submit"
+            className="btn w-100 btn-primary"
+          >
             Log In
           </Button>
+          <br />
+          <br />
+          <button className="btn w-100 btn-success" onClick={googleSignIn}>
+            Google Sign In
+          </button>
+          <br />
           <br />
           <br />
           <p>
             Don’t have an account?{" "}
             <Link className="google-btn" to="/register">
-              Create Accout
+              <button className="btn w-100 btn-danger">Register</button>
             </Link>
           </p>
-          <br />
-          <button className="btn w-25 btn-danger" onClick={googleSignIn}>
-            Google Sign In
-          </button>
         </form>
       </div>
     </div>

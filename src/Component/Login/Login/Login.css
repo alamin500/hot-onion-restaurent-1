@@ -1,14 +1,18 @@
-.login-btn {
+/* .login-btn {
   display: flex;
   align-items: flex-start;
   text-align: center;
-}
-.login-img {
+} */
+/* .login-img {
   display: flex;
   align-items: flex-start;
   padding: 40px;
-}
+} */
 .login-form {
-  align-items: center;
+  display: flex;
+
   justify-content: center;
+}
+.log-h4 {
+  margin: 20px;
 }

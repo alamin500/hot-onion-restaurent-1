@@ -27,9 +27,12 @@ function App() {
         <Router>
           <Header></Header>
           <Switch>
-            {/* <Route exact path="/">
-              
-            </Route> */}
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
             <Route path="/doctor">
               <Doctors></Doctors>
             </Route>
@@ -55,10 +58,8 @@ function App() {
             <Route path="/delivery">
               <Delivery></Delivery>
             </Route>
-            <Route to="/home">
-              <Home></Home>
-            </Route>
-            <Route path="*">
+
+            <Route to="*">
               <Error></Error>
             </Route>
           </Switch>

@@ -1,9 +1,10 @@
-.error-bg {
-  height: 100vh;
-  background-color: rgb(80, 39, 39);
-  margin: 0 2px 0 2px;
-}
-.error-bg h1 {
-  font-size: 100px;
-  font-weight: 1000;
+.error-image {
+  background-image: url("../../../images/error.jpg"),
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  height: 500px;
+  width: 100%;
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
