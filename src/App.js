@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from "./Component/Header/Header";
 import Home from "./Component/Home/Home/Home";
 import Login from "./Component/Login/Login/Login";
-import Delivery from "./Component/Delivery/Delivery";
+
 import Services from "./Component/Home/Services/Services";
 import Doctors from "./Component/Home/Doctors/Doctors";
 import Register from "./Component/Home/Register/Register";
@@ -54,9 +54,6 @@ function App() {
             </PrivateRoute>
             <Route path="/about">
               <AboutUs></AboutUs>
-            </Route>
-            <Route path="/delivery">
-              <Delivery></Delivery>
             </Route>
 
             <Route to="*">
