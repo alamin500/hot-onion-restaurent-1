@@ -1,50 +1,33 @@
 import React from "react";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebookMessenger,
-  faInstagram,
-  faTwitter,
-  faYoutube,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
-import {
-  faPhoneSquare,
-  faMapMarkerAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import { Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import "./Footer.css";
 const Footer = () => {
   return (
     <div>
       <div className="footer-container">
         <div className="container">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-3">
               <div className="left-container text-start">
-                <h1>Chandpur University</h1>
+                <h5>Contact Information</h5>
+
                 <p className="mt-4 ">
                   <small>
-                    An important idea in the definition of a university is the
-                    notion of academic freedom. The first documentary evidence
-                    of this comes from early in the life of the University of
-                    Bologna.
+                    227 Marion street New York USA. Street, 4916 Pinewood Drive.
+                    City, Park Ridge. State/Province abbr, IL. State/Province
+                    full, Illinois. Zip Code/Postal code, 60068.
                   </small>
                 </p>
+                <Link className="footer-link">matlab-hospital.net</Link>
+                <br />
+                <Link className="footer-link">matlab-hospital@mail.com</Link>
                 <div className="icons-container d-flex text-center ">
-                  <div className="icon">
-                    <FontAwesomeIcon icon={faInstagram} />
-                  </div>
-                  <div className="icon">
-                    <FontAwesomeIcon icon={faTwitter} />
-                  </div>
-                  <div className="icon">
-                    <FontAwesomeIcon icon={faYoutube} />
-                  </div>
-                  <div className="icon">
-                    <FontAwesomeIcon icon={faFacebookMessenger} />
-                  </div>
-                  <div className="icon">
-                    <FontAwesomeIcon icon={faLinkedin} />
-                  </div>
+                  <div className="icon"></div>
+                  <div className="icon"></div>
+                  <div className="icon"></div>
+                  <div className="icon"></div>
+                  <div className="icon"></div>
                 </div>
                 <p className="mt-2">
                   <small>Colac © . All rights reserved.</small>
@@ -54,31 +37,53 @@ const Footer = () => {
             <div className="col-md-2">
               <div className="footer-menu-container">
                 <ul>
-                  <li className="footer-menu">
-                    <strong>Platform</strong>
-                  </li>
-                  <li className="footer-menu">Browse Library</li>
-                  <li className="footer-menu">Tutorials</li>
-                  <li className="footer-menu">Patners</li>
-                  <li className="footer-menu">FAQs</li>
+                  <h5 className="footer-menu">
+                    <strong>Doctors</strong>
+                    <br />
+                    <br />
+                  </h5>
+                  <Link className="footer-link">
+                    <li className="footer-menu">Dr. Nick Sims</li>
+                  </Link>
+                  <hr className="line" />
+                  <li className="footer-menu">Dr. Michael Linden</li>
+                  <hr className="line" />
+                  <li className="footer-menu">Dr. Max Turner</li>
+                  <hr className="line" />
+                  <li className="footer-menu">Dr. Amy Adams</li>
+                  <hr className="line" />
+                  <li className="footer-menu">Dr. Turner</li>
+                  <hr className="line" />
                 </ul>
               </div>
             </div>
-            <div className="col-md-2">
+            <div className="col-md-3">
               <div className="footer-menu-container">
                 <ul>
-                  <li className="footer-menu">Company</li>
-                  <li className="footer-menu">About</li>
-                  <li className="footer-menu">Instructor</li>
-                  <li className="footer-menu">Teacher</li>
-                  <li className="footer-menu"> Contract</li>
+                  <h5 className="footer-menu">
+                    <strong>Company</strong>
+                  </h5>
+                  <br />
+                  <Link className="footer-link">
+                    <li className="footer-menu">Outpatient Surgery</li>
+                  </Link>
+                  <hr className="line" />
+                  <li className="footer-menu">Cardiac Clinic</li>
+                  <hr className="line" />
+                  <li className="footer-menu">Ophthalmology Clinic</li>
+                  <hr className="line" />
+                  <li className="footer-menu"> Gynaecological Clinic</li>
+                  <hr className="line" />
+                  <li className="footer-menu"> Outpatient Rehabilitation</li>
+                  <hr className="line" />
                 </ul>
               </div>
             </div>
             <div className="col-md-4">
               <div className="right-footer-container">
-                <h3>Subscribe</h3>
-                <div className="d-flex">
+                <h5>Contact Us</h5>
+                <br />
+                <div className="">
                   <div className="input-group  mb-3">
                     <input
                       type="text"
@@ -88,30 +93,20 @@ const Footer = () => {
                       aria-describedby="basic-addon1"
                     />
                   </div>
+                  <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlTextarea1"
+                  >
+                    <Form.Control
+                      placeholder="Message"
+                      as="textarea"
+                      rows={3}
+                    />
+                  </Form.Group>
                   <div>
                     <button type="button" className="btn btn-primary p-2">
-                      Send
+                      Submit
                     </button>
-                  </div>
-                </div>
-                <div className="phone d-flex align-items-center justify-content-center">
-                  <div className="footer-phone-icon">
-                    <FontAwesomeIcon icon={faPhoneSquare} />
-                  </div>
-                  <div>
-                    <h5> 01763647880</h5>
-                  </div>
-                </div>
-                <div className="map d-flex align-items-center justify-content-center">
-                  <div className="footer-phone-icon">
-                    <FontAwesomeIcon icon={faMapMarkerAlt} />
-                  </div>
-                  <div>
-                    <p>
-                      <br />
-                      Sadar, Chandpur
-                      <br /> Chittagong, Bangladesh
-                    </p>
                   </div>
                 </div>
               </div>
