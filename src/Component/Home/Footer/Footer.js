@@ -61,7 +61,7 @@ const Footer = () => {
               <div className="footer-menu-container">
                 <ul>
                   <h5 className="footer-menu">
-                    <strong>Company</strong>
+                    <strong>Services</strong>
                   </h5>
                   <br />
                   <Link className="footer-link">

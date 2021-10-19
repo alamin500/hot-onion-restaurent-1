@@ -66,6 +66,14 @@ const Login = () => {
             placeholder="Your Email"
           />
           <br />
+          <input
+            type="email"
+            onBlur={handleEmailChange}
+            className="p-2 form-control w-25"
+            placeholder="Email"
+            aria-label="Username"
+            aria-describedby="basic-addon1"
+          />
           <input type="password" onBlur={handlePasswordChange} name="" />
           <br />
           <input type="submit" value="Submit" />
